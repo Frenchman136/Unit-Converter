@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app">
+        <section class="input-section">
+            <h1>Metric/Imperial Unit Conversion</h1>
+
+            <div class="control-grid">
+                <label class="field">
+                    <span>Value</span>
+                    <input type="number" id="input-el" inputmode="decimal" placeholder="Enter a number">
+                </label>
+
+                <label class="field">
+                    <span>Category</span>
+                    <select id="category-el">
+                        <option value="length">Length</option>
+                        <option value="weight">Weight</option>
+                        <option value="volume">Volume</option>
+                        <option value="temperature">Temperature</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span>Decimals</span>
+                    <select id="decimals-el">
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="button-row">
+                <button id="btn-el">Convert</button>
+                <button id="swap-btn" class="secondary-btn" type="button">Swap Direction</button>
+                <button id="clear-btn" class="secondary-btn" type="button">Clear</button>
+                <button id="theme-btn" class="secondary-btn" type="button">Toggle Theme</button>
+            </div>
+
+            <div class="chip-row">
+                <button class="chip-btn" data-value="1" type="button">1</button>
+                <button class="chip-btn" data-value="10" type="button">10</button>
+                <button class="chip-btn" data-value="100" type="button">100</button>
+            </div>
+
+            <p class="key-help">Press <strong>Enter</strong> to convert and <strong>Esc</strong> to clear.</p>
+        </section>
+
+        <section class="output-section">
+            <article class="output-item">
+                <h2 id="result-title">Length Conversion</h2>
+                <p id="unit-tip" class="unit-tip"></p>
+                <p id="result-el" class="result-text">Enter a number to see conversion results.</p>
+                <div class="output-actions">
+                    <button id="copy-btn" class="secondary-btn" type="button">Copy Result</button>
+                </div>
+            </article>
+
+            <article class="output-item history-card">
+                <div class="history-head">
+                    <h2>Recent History</h2>
+                    <button id="clear-history-btn" class="secondary-btn" type="button">Clear History</button>
+                </div>
+                <ul id="history-el" class="history-list"></ul>
+            </article>
+        </section>
+    </main>
+    
+    <footer class="page-footer">
+        <p>&copy; 2026 Frenchman. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
